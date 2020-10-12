@@ -1,0 +1,134 @@
+.header-back {
+    background: rgba(196, 196, 196, 0.1);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include width();
+    padding: 1.25rem 0;
+
+    @include responsive-sm() {
+        width: 92%;
+    }
+    
+    &__logo {
+        padding-right: 1.5rem;
+        display: block;
+
+        img {
+            @include responsive-sm() {
+                width: 86.11%;
+            }
+        }
+        
+    }
+
+    &__list {
+        list-style: none;
+        display: flex;
+        align-items: center;
+    }
+
+    &__item {
+        padding-right: 1rem;
+
+        &--dekstop {
+            @include responsive-md() {
+                display: none;
+            }
+        }
+
+        &--mobile {
+            padding-right: 0;
+            padding-top: 1rem;
+        }
+    }
+
+    &__link {
+        @include list();
+        margin-right: 2vw;
+
+        @include responsive-md() {
+            margin-right: 0;
+        }
+
+        
+        &:hover {
+            color: $violet;
+            transform: translateY(-2px);
+        }
+
+        &--mobile {
+            @include responsive-md() {
+                margin-right: 0;
+            }
+
+        }
+
+        &--stay {
+            @include button();
+            color: $white;
+            margin-right: 0rem;
+
+            @include responsive-md() {
+                width: 11rem;
+            }
+
+            &:hover {
+                box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.44);
+                transform: translateY(-2px);
+                color: $white;
+            }
+        }
+    } 
+         
+
+    &__button {
+        &--dekstop {
+            @include responsive-md() {
+                display: none;
+             }
+        }
+        
+        &--mobile {
+             margin-top: 1rem;
+        }
+    }
+
+    &__mobile {
+        display: none;
+        padding-top: 0.5rem;
+        margin-right: 0;
+
+         @include responsive-md() {
+             display: block;
+             position: relative;
+             text-align: center;
+         }
+
+         @include responsive-sm() {
+            padding-top: 0;
+        }
+
+         &:hover .header__sub-menu {
+             display: block;
+         }
+    }
+
+    &__sub-menu {
+         position: absolute;
+         top: 100%;
+         z-index: 1;
+         left: -1.5rem;
+         display: none;
+         background-color: rgba($color: $white, $alpha: 0.8);
+         padding: 0.5rem;
+
+         @include responsive-sm() {
+            left: -7rem;
+        }
+    }
+}
+

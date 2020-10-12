@@ -1,0 +1,51 @@
+.main {
+    @include width();
+    margin-bottom: 10rem;
+
+    @include responsive-sm() {
+        width: 92%;
+        margin-bottom: 7rem;
+    }
+
+    &__top {
+        width: 64.4%;
+        margin: 0 auto;
+        text-align: center;
+        padding: 6rem 0 4rem;
+
+        @include responsive-sm() {
+            width: 100%;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include responsive-sm() {
+            display: block;
+        }
+    }
+
+    &__card {
+        width: 20.4%;
+        text-align: center;
+        padding: 1.875rem 1.25rem;
+
+        @include responsive-sm() {
+            width: 90%;
+            margin: 0 auto;
+        }
+    }
+
+    &__paragraph {
+        &--dif {
+            p {
+                font-size: 1rem;
+                line-height: 1.25;
+            }  
+        }
+        
+    }
+}

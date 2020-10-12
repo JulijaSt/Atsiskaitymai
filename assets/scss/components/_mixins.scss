@@ -1,0 +1,54 @@
+@mixin center() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin width() {
+    margin: 0 auto;
+    max-width: 1115px;
+    width: 72%;
+}
+
+@mixin list() {
+    display: inline-block;
+    text-decoration: none;
+    color: $grey;
+    font-size: 1.125rem;
+    font-weight: 500;
+    transition: all ease 0.3s;
+
+    @include responsive-sm() {
+        font-size: 1rem;
+    }
+}
+
+@mixin backgroundCover() {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@mixin button() {
+    display: block;
+    border-radius: 10px;
+    text-align: center;
+    padding: 1.2rem 2rem;
+    background-color: $violet;
+    width: 11rem;
+    &:hover {
+        box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.44);
+        transform: translateY(-2px);
+    }
+}
+
+@mixin responsive-sm() {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+@mixin responsive-md() {
+    @media screen and (max-width: 992px) {
+        @content;
+    }
+}

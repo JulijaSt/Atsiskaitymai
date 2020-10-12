@@ -1,0 +1,14 @@
+.button {
+    @include button();
+
+    @include responsive-sm() {
+        margin: 0 auto;
+    }
+
+    &__link {
+        color: $white;
+    } 
+
+    
+    
+}
